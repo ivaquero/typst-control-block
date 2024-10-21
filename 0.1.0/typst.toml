@@ -1,0 +1,8 @@
+[package]
+    name = "cetz-control"
+    version = "0.1.0"
+    entrypoint = "cetz-control.typ"
+    authors = ["ivaquero"]
+    license = "MIT"
+    description = "Control Block using fletcher and CeTZ"
+    repository = ""
