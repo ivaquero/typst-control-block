@@ -1,4 +1,4 @@
-#import "@preview/fletcher:0.5.0": diagram, node, edge
+#import "@preview/fletcher:0.5.2": diagram, node, edge
 
 // font style
 // chinese text
