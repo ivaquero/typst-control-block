@@ -2,7 +2,7 @@
 
 // font style
 // chinese text
-#let ctext(label, font: "Songti SC") = text(label, size: .7em, font: font)
+#let ctext(label, size: .8em, font: "Songti SC") = text(label, size: size, font: font)
 
 // node style
 // rectangle node
