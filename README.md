@@ -6,13 +6,13 @@ Draw Control Block using [fletcher](https://github.com/Jollywatt/typst-fletcher)
 
 ### Clone Official Repository
 
-To compile, please refer to the guide on [typst-packages](https://github.com/typst/packages) and clone this repository in the following path:
+To compile, please refer to the guide on [typst-packages](https://github.com/typst/packages) and clone this repository to your `@local` workspace:
 
 - Linux：
-  - `$XDG_DATA_HOME/typst`
-  - `~/.local/share/typst`
-- macOS：`~/Library/Application Support/typst`
-- Windows：`%APPDATA%/typst`
+  - `$XDG_DATA_HOME/typst/packages/local`
+  - `~/.local/share/typst/packages/local`
+- macOS：`~/Library/Application\ Support/typst/packages/local`
+- Windows：`%APPDATA%/typst/packages/local`
 
 ### Import the Template
 
