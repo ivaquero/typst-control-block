@@ -1,4 +1,4 @@
-# CeTZ-Control
+# Typst-Control-Block
 
 Draw Control Block using [fletcher](https://github.com/Jollywatt/typst-fletcher) and [CeTZ](https://github.com/cetz-package/cetz).
 
@@ -16,8 +16,8 @@ To compile, please refer to the guide on [typst-packages](https://github.com/typ
 
 ### Import the Template
 
-Clone the [cetz-control](https://github.com/ivaquero/cetz-control) repository in the above path, and then import it in the document
+Clone the [control-block](https://github.com/ivaquero/typst-control-block) repository in the above path, and then import it in the document
 
 ```typst
-#import "@local/cetz-control:0.1.0": *
+#import "@local/control-block:0.1.0": *
 ```
