@@ -14,9 +14,7 @@
 
 ```typst
 #figure(
-  sys-block(
-    transfer: $frac(D G, 1 + H D G)$, input: $V$, output: $X$,
-  )
+  sys-block(transfer: $frac(D G, 1 + H D G)$, input: $V$, output: $X$)
 )
 ```
 
