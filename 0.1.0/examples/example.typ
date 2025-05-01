@@ -1,4 +1,4 @@
-#import "@local/control-block:0.1.0": *
+#import "@local/control-blocks:0.1.0": *
 
 = Blocks
 

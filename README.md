@@ -22,14 +22,14 @@ To compile, please refer to the guide on [typst-packages](https://github.com/typ
 
 ### Import the Package
 
-Clone the [control-block](https://github.com/ivaquero/typst-control-block) repository in the above path
+Clone the [control-blocks](https://github.com/ivaquero/typst-control-blocks) repository in the above path
 
 ```bash
-git clone https://github.com/ivaquero/typst-control-block control-block
+git clone https://github.com/ivaquero/typst-control-blocks control-blocks
 ```
 
 and then import it in the document
 
 ```typst
-#import "@local/control-block:0.1.0": *
+#import "@local/control-blocks:0.1.0": *
 ```
