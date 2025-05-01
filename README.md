@@ -4,9 +4,9 @@ Draw Control Blocks using [fletcher](https://github.com/Jollywatt/typst-fletcher
 
 ## Usage
 
-![example](0.1.0/example.png)
+![example](https://raw.githubusercontent.com/ivaquero/typst-control-blocks/refs/heads/main/0.1.0/example.png)
 
-For more details, see [examples.typ](0.1.0/examples/example.typ).
+For more details, see [examples.typ](https://github.com/ivaquero/typst-control-blocks/blob/main/0.1.0/examples/example.typ).
 
 ## Get the Package
 
