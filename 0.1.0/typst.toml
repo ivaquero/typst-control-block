@@ -4,5 +4,5 @@
     entrypoint = "control-block.typ"
     authors = ["ivaquero"]
     license = "MIT"
-    description = "Control Block using fletcher and CeTZ"
+    description = "Draws control blocks using fletcher and CeTZ"
     repository = "https://github.com/ivaquero/typst-control-block"
