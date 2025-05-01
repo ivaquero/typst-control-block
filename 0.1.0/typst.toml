@@ -5,4 +5,4 @@
     authors = ["ivaquero"]
     license = "MIT"
     description = "Control Block using fletcher and CeTZ"
-    repository = ""
+    repository = "https://github.com/ivaquero/typst-control-block"

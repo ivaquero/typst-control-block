@@ -4,6 +4,12 @@ Draw Control Block using [fletcher](https://github.com/Jollywatt/typst-fletcher)
 
 ## Usage
 
+![example](0.1.0/example.png)
+
+For more details, see [examples.typ](0.1.0/examples/example.typ).
+
+## Get the Package
+
 ### Clone Official Repository
 
 To compile, please refer to the guide on [typst-packages](https://github.com/typst/packages) and clone this repository to your `@local` workspace:
@@ -14,7 +20,7 @@ To compile, please refer to the guide on [typst-packages](https://github.com/typ
 - macOS：`~/Library/Application\ Support/typst/packages/local`
 - Windows：`%APPDATA%/typst/packages/local`
 
-### Import the Template
+### Import the Package
 
 Clone the [control-block](https://github.com/ivaquero/typst-control-block) repository in the above path
 
