@@ -1,6 +1,8 @@
 #import "@local/control-block:0.1.0": *
 
-= Single blocks
+= Blocks
+
+== Single blocks
 
 #figure(
   sys-block(
@@ -18,7 +20,37 @@
 )
 ```
 
+== Transfer blocks
+
+#figure(
+  sys-block2(
+    transfer: $D(s)G(s)$,
+    transfer2: $H(s)$,
+    input: $V(s)-X(s)H(s)$,
+    output: $X(s)$,
+    output2: $X(s)H(s)$,
+    error: "Error",
+    reference: $V(s)$,
+  ),
+)
+
+```typst
+#figure(
+  sys-block2(
+    transfer: $D(s)G(s)$,
+    transfer2: $H(s)$,
+    input: $V(s)-X(s)H(s)$,
+    output: $X(s)$,
+    output2: $X(s)H(s)$,
+    error: "Error",
+    reference: $V(s)$,
+  ),
+)
+```
+
 = Control systems
+
+== Open loop
 
 #figure(
   sys-open(
@@ -26,13 +58,12 @@
     actuator: "actuator",
     process: "process",
     input: "commanded\nsignal",
-    output: "actuated\n variable",
+    output: "actuated\nvariable",
     output2: "manipulated\nvariable",
     output3: "controlled\nsignal",
     subunit: "plant",
   ),
 )
-
 
 ```typst
 #figure(
@@ -41,7 +72,7 @@
     actuator: "actuator",
     process: "process",
     input: "commanded\nsignal",
-    output: "actuated\n variable",
+    output: "actuated\nvariable",
     output2: "manipulated\nvariable",
     output3: "controlled\nsignal",
     subunit: "plant",
@@ -49,6 +80,8 @@
 )
 ```
 
+== Closed looop
+
 #figure(
   sys-closed(
     controler: ctext("控制器"),
@@ -57,7 +90,8 @@
     input: ctext("指令信号"),
     output: ctext("执行信号"),
     output2: ctext("传感信号"),
-    refer: ctext("误差表"),
+    error: ctext("误差表"),
+    reference: ctext("校正信号"),
   ),
 )
 
@@ -71,7 +105,8 @@
     input: ctext("指令信号"),
     output: ctext("执行信号"),
     output2: ctext("传感信号"),
-    refer: ctext("误差表"),
+    error: ctext("误差表"),
+    reference: ctext("校正信号"),
   )
 )
 ```
