@@ -99,6 +99,31 @@
   kind: "poly",
 )
 
+// twice u-turned edge
+#let uturn2(
+  n1,
+  n2,
+  label,
+  label-pos: 0.15,
+  label-side: left,
+  marks: "-|>",
+  height: 1.25,
+  corner: right,
+) = edge(
+  n1,
+  (n1.at(0), n1.at(1) + height),
+  (n2.at(0) - 1, n2.at(1) + height),
+  (n2.at(0) - 1, n2.at(1)),
+  n2,
+  marks: marks,
+  label: label,
+  label-pos: label-pos,
+  label-side: label-side,
+  corner: corner,
+  corner-radius: 4pt,
+  kind: "poly",
+)
+
 // vertical u-turned edge
 #let uturn-v(
   n1,
@@ -113,6 +138,30 @@
   n1,
   (n1.at(0) + height, n1.at(1)),
   (n2.at(0) + height, n2.at(1)),
+  n2,
+  marks: marks,
+  label: label,
+  label-pos: label-pos,
+  label-side: label-side,
+  corner: corner,
+  corner-radius: 4pt,
+  kind: "poly",
+)
+
+// vertical twice u-turned edge
+#let uturn2-v(
+  n1,
+  n2,
+  label,
+  label-pos: 0.15,
+  label-side: left,
+  marks: "-|>",
+  height: 2.5,
+  corner: right,
+) = edge(
+  n1,
+  (n1.at(0) + height, n1.at(1) - 1),
+  (n2.at(0), n2.at(1) - 1),
   n2,
   marks: marks,
   label: label,

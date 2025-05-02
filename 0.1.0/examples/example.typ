@@ -133,6 +133,12 @@ segment(n1, n2, label, label-pos: 0.5, label-side: left, dashed: false, corner: 
 // u-turned edge
 uturn(n1, n2, label, label-pos: 0.15, label-side: left, marks: "-|>", height: 1.25, corner: right)
 
+// twice u-turned edge
+uturn2(n1, n2, label, label-pos: 0.15, label-side: left, marks: "-|>", height: 1.25, corner: right)
+
 // vertical u-turned edge
 uturn-v(n1, n2, label, label-pos: 0.15, label-side: left, marks: "-|>", height: 2.5, corner: right)
+
+// vertical twice u-turned edge
+uturn2-v(n1, n2, label, label-pos: 0.15, label-side: left, marks: "-|>", height: 2.5, corner: right)
 ```
