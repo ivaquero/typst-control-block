@@ -40,7 +40,7 @@
     input: $V(s)-X(s)H(s)$,
     output: $X(s)$,
     output2: $X(s)H(s)$,
-    error: "Error",
+    loss: "Loss",
     reference: $V(s)$,
   ),
 )
@@ -102,7 +102,7 @@
     input: ctext("指令信号"),
     output: ctext("执行信号"),
     output2: ctext("传感信号"),
-    error: ctext("误差表"),
+    loss: ctext("误差表"),
     reference: ctext("校正信号"),
   )
 )
@@ -112,23 +112,27 @@
 
 == Nodes
 
-```typ
+```typst
 // rectangle node
-#let rnode(sym, label, height: 2em) = node(
-  sym,
-  label,
-  shape: rect,
-  corner-radius: 4pt,
-  height: height,
-)
+rnode(sym, label, height: 2em)
 // circle node
-#let onode(sym, label, height: 1em) = node(
-  sym,
-  label,
-  shape: circle,
-  radius: 10pt,
-  height: height,
-)
+onode(sym, label, height: 1em)
 // label node
-#let label(sym, label) = node(sym, label, stroke: none)
+label(sym, label)
+```
+
+== Edges
+
+```typst
+// edge with arrowhead
+arrow(n1, n2, label, label-pos: 0.5, label-side: left, dashed: false, corner: none, corner-radius: none)
+
+// edge without arrowhead
+segment(n1, n2, label, label-pos: 0.5, label-side: left, dashed: false, corner: none, corner-radius: none)
+
+// u-turned edge
+uturn(n1, n2, label, label-pos: 0.15, label-side: left, marks: "-|>", height: 1.25, corner: right)
+
+// vertical u-turned edge
+uturn-v(n1, n2, label, label-pos: 0.15, label-side: left, marks: "-|>", height: 2.5, corner: right)
 ```
