@@ -27,7 +27,7 @@
     input: $V(s)-X(s)H(s)$,
     output: $X(s)$,
     output2: $X(s)H(s)$,
-    error: "Error",
+    loss: "Loss",
     reference: $V(s)$,
   ),
 )
@@ -88,11 +88,10 @@
     input: ctext("指令信号"),
     output: ctext("执行信号"),
     output2: ctext("传感信号"),
-    error: ctext("误差表"),
+    loss: ctext("损失函数"),
     reference: ctext("校正信号"),
   ),
 )
-
 
 ```typst
 #figure(
@@ -107,4 +106,29 @@
     reference: ctext("校正信号"),
   )
 )
+```
+
+= Utils
+
+== Nodes
+
+```typ
+// rectangle node
+#let rnode(sym, label, height: 2em) = node(
+  sym,
+  label,
+  shape: rect,
+  corner-radius: 4pt,
+  height: height,
+)
+// circle node
+#let onode(sym, label, height: 1em) = node(
+  sym,
+  label,
+  shape: circle,
+  radius: 10pt,
+  height: height,
+)
+// label node
+#let label(sym, label) = node(sym, label, stroke: none)
 ```

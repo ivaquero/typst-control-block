@@ -1,4 +1,4 @@
-#import "@preview/fletcher:0.5.3": diagram, node, edge
+#import "@preview/fletcher:0.5.5": diagram, node, edge
 
 // font style
 // chinese text
@@ -33,18 +33,20 @@
 #let label(sym, label) = node(sym, label, stroke: none)
 
 // edge style
+// edge with arrowhead
 #let arrow(
   n1,
   n2,
   label,
   label-pos: 0.5,
   label-side: left,
+  dashed: false,
   corner: none,
   corner-radius: none,
 ) = edge(
   n1,
   n2,
-  marks: "-|>",
+  marks: if (dashed) { "--|>" } else { "-|>" },
   label: label,
   label-pos: label-pos,
   label-side: label-side,
@@ -52,18 +54,20 @@
   corner-radius: 4pt,
 )
 
+// edge without arrowhead
 #let segment(
   n1,
   n2,
   label,
   label-pos: 0.5,
   label-side: left,
+  dashed: false,
   corner: none,
   corner-radius: none,
 ) = edge(
   n1,
   n2,
-  marks: "-",
+  marks: if (dashed) { "--" } else { "-" },
   label: label,
   label-pos: label-pos,
   label-side: label-side,
@@ -71,23 +75,52 @@
   corner-radius: 4pt,
 )
 
-#let dash(
+// u-turned edge
+#let uturn(
   n1,
   n2,
   label,
-  label-pos: 0.5,
+  label-pos: 0.15,
   label-side: left,
-  corner: none,
-  corner-radius: none,
+  marks: "-|>",
+  height: 1.25,
+  corner: right,
 ) = edge(
   n1,
+  (n1.at(0), n1.at(1) + height),
+  (n2.at(0), n2.at(1) + height),
   n2,
-  marks: "--",
+  marks: marks,
   label: label,
   label-pos: label-pos,
   label-side: label-side,
   corner: corner,
   corner-radius: 4pt,
+  kind: "poly",
+)
+
+// vertical u-turned edge
+#let uturn-v(
+  n1,
+  n2,
+  label,
+  label-pos: 0.15,
+  label-side: left,
+  marks: "-|>",
+  height: 2.5,
+  corner: right,
+) = edge(
+  n1,
+  (n1.at(0) + height, n1.at(1)),
+  (n2.at(0) + height, n2.at(1)),
+  n2,
+  marks: marks,
+  label: label,
+  label-pos: label-pos,
+  label-side: label-side,
+  corner: corner,
+  corner-radius: 4pt,
+  kind: "poly",
 )
 
 #let sys-block(
@@ -117,7 +150,7 @@
   input: "",
   output: "",
   output2: "",
-  error: "",
+  loss: "",
   reference: "",
 ) = diagram(
   spacing: (1.5em, 1.5em),
@@ -125,25 +158,23 @@
   mark-scale: 80%,
   let line = 0.5,
   let start = 1,
-  let (I, R, C, O) = (
+  let (R, L, C) = (
     (start, line),
     (start + 1.5, line),
-    (start + 4.5, line),
-    (start + 7.5, line + 0.5),
+    (start + 5.5, line),
   ),
-  let S = (5.5, line + 1.25),
-  rnode(I, reference),
-  onode(R, ""),
-  label((start + 1.5, line - 0.75), error),
+  let H = (start + 5.5, line + 1.25),
+  rnode(R, reference),
+  onode(L, ""),
+  label((start + 1.5, line - 0.75), loss),
   label((start + 1.1, line - 0.25), text("+", size: 0.8em)),
   label((start + 1.3, line + 0.35), text("-", size: 1.2em)),
   rnode(C, transfer),
-  rnode(S, transfer2),
-  arrow(I, R, ""),
-  arrow(R, C, text(input, size: 0.6em)),
-  segment(C, O, text(output, size: 0.6em), label-pos: 0.25, corner: right),
-  arrow(O, S, "", corner: right),
-  arrow(S, R, text(output2, size: 0.6em), label-pos: 0.25, corner: right),
+  rnode(H, transfer2),
+  arrow(R, L, ""),
+  arrow(L, C, text(input, size: 0.6em)),
+  uturn-v(C, H, text(output, size: 0.6em)),
+  arrow(H, L, text(output2, size: 0.6em), label-pos: 0.25, corner: right),
 )
 
 #let sys-open(
@@ -168,10 +199,10 @@
     (start + 10, line),
     (start + 13, line),
   ),
-  let (B1, B2, B3) = (
+  let (B1, B2, M) = (
     (start + 5, line),
-    (start + 8.5, line + 1.25),
     (start + 11.5, line),
+    (start + 8.5, line + 0.85),
   ),
   rnode(C, controler),
   rnode(A, actuator),
@@ -180,9 +211,8 @@
   arrow(C, A, output),
   arrow(A, P, output2),
   arrow(P, O2, output3),
-  dash(B1, B2, "", corner: left),
-  dash(B2, B3, "", corner: left),
-  label(B2, subunit),
+  uturn(B1, B2, "", marks: "--", corner: left),
+  label(M, subunit),
 )
 
 #let sys-closed(
@@ -192,7 +222,7 @@
   input: "",
   output: "",
   output2: "",
-  error: "",
+  loss: "",
   reference: "",
 ) = diagram(
   spacing: (1.5em, 1.5em),
@@ -206,10 +236,10 @@
     (start + 4.5, line),
     (start + 8, line),
   ),
-  let S = (5.5, line + 1),
+  let S = (start + 4.5, line + 1.25),
   rnode(R, reference),
   onode(O, ""),
-  label((start + 2, line - 0.75), error),
+  label((start + 2, line - 0.75), loss),
   label((start + 1.6, line - 0.25), text("+", size: 0.8em)),
   label((start + 1.8, line + 0.35), text("-", size: 1.2em)),
   rnode(T, controler),
@@ -219,5 +249,5 @@
   arrow(O, T, input),
   arrow(T, A, output),
   arrow(A, S, "", corner: right),
-  arrow(S, O, output2, label-pos: 0.75, corner: right),
+  arrow(S, O, output2, label-pos: 0.6, corner: right),
 )
