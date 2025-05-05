@@ -1,19 +1,19 @@
-# Control Blocks
+# Consketcher
 
-Draws Control Blocks using [fletcher](https://github.com/Jollywatt/typst-fletcher) and [CeTZ](https://github.com/cetz-package/cetz).
+Draws Control Sketches using [fletcher](https://github.com/Jollywatt/typst-fletcher) and [CeTZ](https://github.com/cetz-package/cetz).
 
 ## Get Started
 
-Import `control-blocks` from the `@preview` namespace.
+Import `consketcher` from the `@preview` namespace.
 
 ```typst
-#import "@preview/control-blocks:0.1.0": *
+#import "@preview/consketcher:0.1.0": *
 ```
 
-![example](https://raw.githubusercontent.com/ivaquero/typst-control-blocks/refs/heads/main/0.1.0/example.png)
-![example2](https://raw.githubusercontent.com/ivaquero/typst-control-blocks/refs/heads/main/0.1.0/example2.png)
+![example](https://raw.githubusercontent.com/ivaquero/typst-consketcher/refs/heads/main/0.1.0/example.png)
+![example2](https://raw.githubusercontent.com/ivaquero/typst-consketcher/refs/heads/main/0.1.0/example2.png)
 
-For more details, see [examples.typ](https://github.com/ivaquero/typst-control-blocks/blob/main/0.1.0/examples/example.typ).
+For more details, see [examples.typ](https://github.com/ivaquero/typst-consketcher/blob/main/0.1.0/examples/example.typ).
 
 ## Clone Official Repository
 
@@ -25,14 +25,14 @@ To compile, please refer to the guide on [typst-packages](https://github.com/typ
 - macOS：`~/Library/Application\ Support/typst/packages/local`
 - Windows：`%APPDATA%/typst/packages/local`
 
-Clone the [control-blocks](https://github.com/ivaquero/typst-control-blocks) repository in the above path
+Clone the [consketcher](https://github.com/ivaquero/typst-consketcher) repository in the above path
 
 ```bash
-git clone https://github.com/ivaquero/typst-control-blocks control-blocks
+git clone https://github.com/ivaquero/typst-consketcher consketcher
 ```
 
 and then import it in the document
 
 ```typst
-#import "@local/control-blocks:0.1.0": *
+#import "@local/consketcher:0.1.0": *
 ```

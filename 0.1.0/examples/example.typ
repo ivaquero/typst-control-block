@@ -1,4 +1,4 @@
-#import "@local/control-blocks:0.1.0": *
+#import "@local/consketcher:0.1.0": *
 
 = Blocks
 
